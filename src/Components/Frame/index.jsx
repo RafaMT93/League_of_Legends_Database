@@ -1,8 +1,8 @@
 import React from 'react';
 import { WrapperFrame } from './styled';
 
-const Frame = () => {
-  return <WrapperFrame></WrapperFrame>;
+const Frame = ({ name }) => {
+  return <WrapperFrame>{name}</WrapperFrame>;
 };
 
 export default Frame;

@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../../Components/Header';
 import Frame from '../../Components/Frame';
 import { SEARCH_IN_VERSION } from '../../API';
 import useFetch from '../../Hooks/useFetch';
@@ -21,7 +20,6 @@ const Home = () => {
   if (data)
     return (
       <section>
-        <Header />
         <Wrapper>
           {Object.keys(data.data).map((championName) => {
             return (

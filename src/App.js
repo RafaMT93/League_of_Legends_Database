@@ -1,4 +1,5 @@
 import Home from './Containers/Home';
+import Header from './Components/Header';
 import Champion from './Containers/Champion';
 import Error404 from './Containers/Error404';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -9,6 +10,7 @@ function App() {
     <div>
       <Router>
         <ResetCss />
+        <Header />
         <Switch>
           <Route exact path="/">
             <Home />

@@ -16,8 +16,6 @@ const Home = () => {
     fetchChampions();
   }, [request]);
 
-  console.log(data);
-
   if (loading) <p>Loading...</p>;
   if (data)
     return (

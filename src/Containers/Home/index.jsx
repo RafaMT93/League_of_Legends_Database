@@ -27,7 +27,7 @@ const Home = () => {
           {Object.keys(data.data).map((championName) => {
             return (
               <Frame
-                name={data.data[championName].name}
+                name={data.data[championName].id}
                 key={data.data[championName].id}
                 image={`http://ddragon.leagueoflegends.com/cdn/${VERSION}/img/champion/${championName}.png`}
               />

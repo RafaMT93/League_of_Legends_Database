@@ -4,7 +4,12 @@ import { WrapperHeader, WrapperHeaderLink } from './styled';
 const Header = () => {
   return (
     <WrapperHeader>
-      <WrapperHeaderLink>Header</WrapperHeaderLink>
+      <WrapperHeaderLink>Logo</WrapperHeaderLink>
+      <WrapperHeaderLink>Champions</WrapperHeaderLink>
+      <WrapperHeaderLink>Itens</WrapperHeaderLink>
+      <WrapperHeaderLink>Spells</WrapperHeaderLink>
+      <WrapperHeaderLink>Jungle Time</WrapperHeaderLink>
+      <WrapperHeaderLink>Summoners</WrapperHeaderLink>
     </WrapperHeader>
   );
 };

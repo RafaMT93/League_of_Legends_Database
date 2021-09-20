@@ -7,10 +7,12 @@ import useFetch from '../../Hooks/useFetch';
 import { Wrapper } from './styled';
 
 const Home = () => {
+  const VERSION = '11.18.1';
+
   const { data, loading, request } = useFetch();
   React.useEffect(() => {
     async function fetchChampions() {
-      const { url, options } = SEARCH_IN_VERSION('11.18.1');
+      const { url, options } = SEARCH_IN_VERSION(VERSION);
       request(url, options);
     }
     fetchChampions();
@@ -27,7 +29,7 @@ const Home = () => {
               <Frame
                 name={data.data[championName].name}
                 key={data.data[championName].id}
-                image={`http://ddragon.leagueoflegends.com/cdn/11.18.1/img/champion/${championName}.png`}
+                image={`http://ddragon.leagueoflegends.com/cdn/${VERSION}/img/champion/${championName}.png`}
               />
             );
           })}

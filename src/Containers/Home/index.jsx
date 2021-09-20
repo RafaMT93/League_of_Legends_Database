@@ -16,7 +16,7 @@ const Home = () => {
     fetchChampions();
   }, [request]);
 
-  if (loading) <p>Loading...</p>;
+  if (loading) return <p>Loading...</p>;
   if (data)
     return (
       <section>
@@ -26,7 +26,8 @@ const Home = () => {
               <Frame
                 name={data.data[championName].name}
                 key={data.data[championName].id}
-                image={`http://ddragon.leagueoflegends.com/cdn/${VERSION}/img/champion/${championName}.png`}
+                image={`http://ddragon.leagueoflegends.com/cdn/${VERSION}/img/champion/${data.data[championName].id}.png`}
+                id={data.data[championName].id}
               />
             );
           })}

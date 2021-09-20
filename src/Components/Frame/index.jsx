@@ -1,8 +1,13 @@
 import React from 'react';
-import { WrapperFrame } from './styled';
+import { WrapperFrame, WrapperChampionName, WrapperSection } from './styled';
 
-const Frame = ({ name }) => {
-  return <WrapperFrame>{name}</WrapperFrame>;
+const Frame = ({ name, image }) => {
+  return (
+    <WrapperSection>
+      <WrapperFrame image={image}></WrapperFrame>
+      <WrapperChampionName>{name}</WrapperChampionName>
+    </WrapperSection>
+  );
 };
 
 export default Frame;

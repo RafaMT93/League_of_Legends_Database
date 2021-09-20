@@ -29,6 +29,7 @@ const Home = () => {
               <Frame
                 name={data.data[championName].id}
                 key={data.data[championName].id}
+                image={`http://ddragon.leagueoflegends.com/cdn/11.18.1/img/champion/${championName}.png`}
               />
             );
           })}

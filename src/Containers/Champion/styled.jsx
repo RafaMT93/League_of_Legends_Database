@@ -7,7 +7,8 @@ export const WrapperChampionDiv = styled.div`
   font-weight: bold;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%),
     url(${({ image }) => image}) no-repeat;
-  background-size: 100%;
+  background-position: center;
+  background-size: cover;
   height: 500px;
 
   @media (max-width: 900px) {
@@ -31,10 +32,30 @@ export const WrapperChampionTitle = styled.p`
 export const WrapperInfo = styled(Col)`
   position: relative;
   left: 5%;
-  top: 100px;
+  top: 50px;
   display: block;
   width: 150px;
   height: 100px;
+`;
+
+export const WrapperInfoDetails = styled(Col)`
+  position: relative;
+  right: 10%;
+  top: 50px;
+  display: block;
+
+  @media (max-width: 900px) {
+    right: 50px;
+    margin: auto;
+  }
+`;
+
+export const WrapperInfoDetailsInRight = styled(Col)`
+  text-align: right;
+  position: relative;
+  right: 10%;
+  top: 50px;
+  display: block;
 `;
 
 export const WrapperContent = styled.div`

@@ -11,6 +11,8 @@ import {
   WrapperContent,
   WrapperLore,
   WrapperInfo,
+  WrapperInfoDetails,
+  WrapperInfoDetailsInRight,
   WrapperH1,
   WrapperTips,
   WrapperSecondaryBar,
@@ -37,7 +39,7 @@ const Champion = () => {
           image={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${params.name}_0.jpg`}
         >
           <Row gutter={[16, 16]}>
-            <WrapperInfo span={24} md={16}>
+            <WrapperInfo span={24} md={8}>
               <p>Informações Básicas</p>
               <br />
               <p>Ataque: {data.data[params.name].info.attack}</p>
@@ -45,6 +47,36 @@ const Champion = () => {
               <p>Dificuldade: {data.data[params.name].info.difficulty}</p>
               <p>Magic: {data.data[params.name].info.magic}</p>
             </WrapperInfo>
+            <WrapperInfoDetails span={24} md={8}>
+              <Row gutter={[16, 16]}>
+                <Col span={14} md={7}>
+                  <p>
+                    <b>Função Principal</b>
+                  </p>
+                  <p>
+                    <i>{data.data[params.name].tags[0]}</i>
+                  </p>
+                </Col>
+                <Col span={14} md={7}>
+                  {data.data[params.name]?.tags[1] && (
+                    <p>
+                      <b>Função Secundária</b>
+                    </p>
+                  )}
+                  <p>
+                    <i>{data.data[params.name]?.tags[1]}</i>
+                  </p>
+                </Col>
+              </Row>
+            </WrapperInfoDetails>
+            <WrapperInfoDetailsInRight span={24} md={8}>
+              <p>
+                <b>Barra Secundária</b>
+              </p>
+              <p>
+                <i>{data.data[params.name].partype}</i>
+              </p>
+            </WrapperInfoDetailsInRight>
           </Row>
         </WrapperChampionDiv>
         <WrapperContent>
@@ -55,34 +87,7 @@ const Champion = () => {
             {data.data[params.name].title}
           </WrapperChampionTitle>
 
-          <Row gutter={[16, 16]}>
-            <Col span={24} md={12}>
-              <Row gutter={[16, 16]}>
-                <Col span={10} md={5}>
-                  <p>
-                    <i>Função Principal</i>
-                  </p>
-                  <p>{data.data[params.name].tags[0]}</p>
-                </Col>
-                <Col span={10} md={5}>
-                  {data.data[params.name]?.tags[1] && (
-                    <p>
-                      <i>Função Secundária</i>
-                    </p>
-                  )}
-                  <p>{data.data[params.name]?.tags[1]}</p>
-                </Col>
-              </Row>
-            </Col>
-            <WrapperSecondaryBar span={24} md={12}>
-              <p>
-                <i>Barra Secundária</i>
-              </p>
-              {data.data[params.name].partype}
-            </WrapperSecondaryBar>
-          </Row>
           <WrapperLore>{data.data[params.name].lore}</WrapperLore>
-          <p>{console.log(data.data[params.name])}</p>
           <WrapperTips gutter={[16, 16]}>
             <Col span={24} md={12}>
               <WrapperH1>
@@ -106,6 +111,7 @@ const Champion = () => {
             </Col>
           </WrapperTips>
         </WrapperContent>
+        <p>{console.log(data.data[params.name])}</p>
       </>
     );
   return null;

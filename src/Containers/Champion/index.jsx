@@ -15,7 +15,6 @@ import {
   WrapperInfoDetailsInRight,
   WrapperH1,
   WrapperTips,
-  WrapperSecondaryBar,
 } from './styled';
 
 const Champion = () => {

@@ -81,10 +81,6 @@ export const WrapperChampionH1Name = styled.h1`
   }
 `;
 
-export const WrapperSecondaryBar = styled(Col)`
-  text-align: right;
-`;
-
 export const WrapperLore = styled.section`
   margin-top: 2rem;
 `;

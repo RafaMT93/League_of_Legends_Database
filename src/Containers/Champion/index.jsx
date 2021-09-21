@@ -1,34 +1,23 @@
 import React from 'react';
-import useFetch from '../../Hooks/useFetch';
+import Lore from './ChampionLore';
+import ChampionInfo from './ChampionInfo';
+import { WrapperChampionDiv } from './styled';
 
-import { Row, Col } from 'antd';
+import useFetch from '../../Hooks/useFetch';
 import { useParams } from 'react-router-dom';
 import { SEARCH_CHAMPION } from '../../API';
-import {
-  WrapperChampionDiv,
-  WrapperChampionH1Name,
-  WrapperChampionTitle,
-  WrapperContent,
-  WrapperLore,
-  WrapperInfo,
-  WrapperInfoDetails,
-  WrapperInfoDetailsInRight,
-  WrapperH1,
-  WrapperTips,
-} from './styled';
 
-const Champion = () => {
-  const VERSION = '11.18.1';
+const Champion = ({ version }) => {
   const params = useParams();
   const { data, loading, request } = useFetch();
 
   React.useEffect(() => {
     async function fetchChampions() {
-      const { url, options } = SEARCH_CHAMPION(VERSION, params.name);
+      const { url, options } = SEARCH_CHAMPION(version, params.name);
       request(url, options);
     }
     fetchChampions();
-  }, [params.name, request]);
+  }, [params.name, request, version]);
 
   if (loading) return <p>Loading...</p>;
   if (data)
@@ -37,79 +26,23 @@ const Champion = () => {
         <WrapperChampionDiv
           image={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${params.name}_0.jpg`}
         >
-          <Row gutter={[16, 16]}>
-            <WrapperInfo span={24} md={8}>
-              <p>Informações Básicas</p>
-              <br />
-              <p>Ataque: {data.data[params.name].info.attack}</p>
-              <p>Defesa: {data.data[params.name].info.defense}</p>
-              <p>Dificuldade: {data.data[params.name].info.difficulty}</p>
-              <p>Magic: {data.data[params.name].info.magic}</p>
-            </WrapperInfo>
-            <WrapperInfoDetails span={24} md={8}>
-              <Row gutter={[16, 16]}>
-                <Col span={14} md={7}>
-                  <p>
-                    <b>Função Principal</b>
-                  </p>
-                  <p>
-                    <i>{data.data[params.name].tags[0]}</i>
-                  </p>
-                </Col>
-                <Col span={14} md={7}>
-                  {data.data[params.name]?.tags[1] && (
-                    <p>
-                      <b>Função Secundária</b>
-                    </p>
-                  )}
-                  <p>
-                    <i>{data.data[params.name]?.tags[1]}</i>
-                  </p>
-                </Col>
-              </Row>
-            </WrapperInfoDetails>
-            <WrapperInfoDetailsInRight span={24} md={8}>
-              <p>
-                <b>Barra Secundária</b>
-              </p>
-              <p>
-                <i>{data.data[params.name].partype}</i>
-              </p>
-            </WrapperInfoDetailsInRight>
-          </Row>
+          <ChampionInfo
+            attack={data.data[params.name].info.attack}
+            defense={data.data[params.name].info.defense}
+            difficulty={data.data[params.name].info.difficulty}
+            magic={data.data[params.name].info.magic}
+            tags={data.data[params.name].tags}
+            partype={data.data[params.name].partype}
+          />
         </WrapperChampionDiv>
-        <WrapperContent>
-          <WrapperChampionH1Name>
-            {data.data[params.name].name}
-          </WrapperChampionH1Name>
-          <WrapperChampionTitle>
-            {data.data[params.name].title}
-          </WrapperChampionTitle>
+        <Lore
+          name={data.data[params.name].name}
+          title={data.data[params.name].title}
+          lore={data.data[params.name].lore}
+          allytips={data.data[params.name].allytips}
+          enemytips={data.data[params.name].enemytips}
+        />
 
-          <WrapperLore>{data.data[params.name].lore}</WrapperLore>
-          <WrapperTips gutter={[16, 16]}>
-            <Col span={24} md={12}>
-              <WrapperH1>
-                Dicas para jogar de {data.data[params.name].name}
-              </WrapperH1>
-              <ul>
-                {data.data[params.name].allytips.map((x, index) => (
-                  <li key={index}>{x}</li>
-                ))}
-              </ul>
-            </Col>
-            <Col span={24} md={12}>
-              <WrapperH1>
-                Dicas para contra {data.data[params.name].name}
-              </WrapperH1>
-              <ul>
-                {data.data[params.name].enemytips.map((x, index) => (
-                  <li key={index}>{x}</li>
-                ))}
-              </ul>
-            </Col>
-          </WrapperTips>
-        </WrapperContent>
         <p>{console.log(data.data[params.name])}</p>
       </>
     );

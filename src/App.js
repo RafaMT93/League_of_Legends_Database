@@ -9,6 +9,8 @@ import theme from './theme';
 import './App.css';
 
 function App() {
+  const VERSION = '11.19.1';
+
   return (
     <ThemeProvider theme={theme}>
       <Router>
@@ -16,10 +18,10 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Home version={VERSION} />
           </Route>
           <Route path="/Champion/:name">
-            <Champion />
+            <Champion version={VERSION} />
           </Route>
           <Route path="*">
             <Error404 />

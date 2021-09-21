@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Row, Col } from 'antd';
 
 export const WrapperChampionDiv = styled.div`
   font-family: ${({ theme }) => theme.fonts.regular};
@@ -9,9 +10,19 @@ export const WrapperChampionDiv = styled.div`
     url(${({ image }) => image}) no-repeat;
   background-size: 100%;
   height: 500px;
+
+  @media (max-width: 900px) {
+    height: 400px;
+  }
+  @media (max-width: 700px) {
+    height: 300px;
+  }
+  @media (max-width: 520px) {
+    height: 200px;
+  }
 `;
 
-export const WrapperInfo = styled.div`
+export const WrapperInfo = styled(Col)`
   position: relative;
   left: 5%;
   top: 100px;
@@ -25,10 +36,11 @@ export const WrapperContent = styled.div`
   margin: 2rem;
 `;
 
-export const WrapperChampionH1 = styled.h1`
+export const WrapperChampionH1Name = styled.h1`
   font-size: calc(${({ theme }) => theme.fonts.fontSize} * 2);
   font-weight: bold;
   text-align: center;
+
   &::after {
     content: ' ';
     width: 350px;
@@ -40,6 +52,23 @@ export const WrapperChampionH1 = styled.h1`
   }
 `;
 
+export const WrapperSecondaryBar = styled(Col)`
+  text-align: right;
+`;
+
 export const WrapperLore = styled.section`
   margin-top: 2rem;
+`;
+
+export const WrapperTips = styled(Row)`
+  margin-top: 2rem;
+
+  ul {
+    margin-top: 1rem;
+  }
+`;
+
+export const WrapperH1 = styled.h1`
+  font-size: calc(${({ theme }) => theme.fonts.fontSize} * 1.2);
+  font-weight: bold;
 `;

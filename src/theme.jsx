@@ -5,6 +5,7 @@ const theme = {
     border: '#333',
     primaryText: '#333',
     secondatyText: '#fff',
+
     success: '#135E01',
   },
   fonts: {

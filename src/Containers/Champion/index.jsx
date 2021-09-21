@@ -7,12 +7,13 @@ import { SEARCH_CHAMPION } from '../../API';
 import {
   WrapperChampionDiv,
   WrapperChampionH1Name,
+  WrapperChampionTitle,
   WrapperContent,
   WrapperLore,
   WrapperInfo,
   WrapperH1,
   WrapperTips,
-  WrapperSecondaryBar
+  WrapperSecondaryBar,
 } from './styled';
 
 const Champion = () => {
@@ -37,7 +38,8 @@ const Champion = () => {
         >
           <Row gutter={[16, 16]}>
             <WrapperInfo span={24} md={16}>
-              <p></p>
+              <p>Informações Básicas</p>
+              <br />
               <p>Ataque: {data.data[params.name].info.attack}</p>
               <p>Defesa: {data.data[params.name].info.defense}</p>
               <p>Dificuldade: {data.data[params.name].info.difficulty}</p>
@@ -49,6 +51,10 @@ const Champion = () => {
           <WrapperChampionH1Name>
             {data.data[params.name].name}
           </WrapperChampionH1Name>
+          <WrapperChampionTitle>
+            {data.data[params.name].title}
+          </WrapperChampionTitle>
+
           <Row gutter={[16, 16]}>
             <Col span={24} md={12}>
               <Row gutter={[16, 16]}>
@@ -56,7 +62,7 @@ const Champion = () => {
                   <p>
                     <i>Função Principal</i>
                   </p>
-                  {data.data[params.name].tags[0]}
+                  <p>{data.data[params.name].tags[0]}</p>
                 </Col>
                 <Col span={10} md={5}>
                   {data.data[params.name]?.tags[1] && (
@@ -64,7 +70,7 @@ const Champion = () => {
                       <i>Função Secundária</i>
                     </p>
                   )}
-                  {data.data[params.name]?.tags[1]}
+                  <p>{data.data[params.name]?.tags[1]}</p>
                 </Col>
               </Row>
             </Col>

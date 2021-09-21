@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { Row, Col } from 'antd';
 
 export const WrapperChampionDiv = styled.div`
-  font-family: ${({ theme }) => theme.fonts.regular};
   color: ${({ theme }) => theme.colors.secondatyText};
   font-size: ${({ theme }) => theme.fonts.fontSize};
   font-weight: bold;
@@ -22,6 +21,13 @@ export const WrapperChampionDiv = styled.div`
   }
 `;
 
+export const WrapperChampionTitle = styled.p`
+  font-size: calc(${({ theme }) => theme.fonts.fontSize} * 1.5);
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 20px;
+`;
+
 export const WrapperInfo = styled(Col)`
   position: relative;
   left: 5%;
@@ -32,6 +38,8 @@ export const WrapperInfo = styled(Col)`
 `;
 
 export const WrapperContent = styled.div`
+  font-family: ${({ theme }) => theme.fonts.regular};
+
   padding: 0.313rem;
   margin: 2rem;
 `;

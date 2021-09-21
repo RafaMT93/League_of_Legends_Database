@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ResetCss } from './Global/ResetCss';
 import { ThemeProvider } from 'styled-components';
 import theme from './theme';
+import './App.css';
 
 function App() {
   return (

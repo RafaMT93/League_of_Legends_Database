@@ -47,6 +47,24 @@ const Champion = () => {
           <WrapperChampionH1>{data.data[params.name].name}</WrapperChampionH1>
           <WrapperLore>{data.data[params.name].lore}</WrapperLore>
           <p>{console.log(data.data[params.name])}</p>
+          <Row gutter={[16, 16]}>
+            <Col span={24} md={12}>
+              <h1>Dicas para jogar de {data.data[params.name].name}</h1>
+              <ul>
+                {data.data[params.name].allytips.map((x, index) => (
+                  <li key={index}>{x}</li>
+                ))}
+              </ul>
+            </Col>
+            <Col span={24} md={12}>
+              <h1>Dicas para contra {data.data[params.name].name}</h1>
+              <ul>
+                {data.data[params.name].enemytips.map((x, index) => (
+                  <li key={index}>{x}</li>
+                ))}
+              </ul>
+            </Col>
+          </Row>
         </WrapperContent>
       </>
     );

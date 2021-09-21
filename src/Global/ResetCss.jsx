@@ -31,6 +31,7 @@ html {
 body {
   margin: 0;
   font-family: Roboto, sans-serif;
+  overflow-x: hidden;
 }
 /**
  * Render the main element consistently in IE.

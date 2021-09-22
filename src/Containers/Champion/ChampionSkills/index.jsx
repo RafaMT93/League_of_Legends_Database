@@ -1,8 +1,13 @@
 import React from 'react';
 import Image from '../../../Components/Image';
 
-import { WrapperSkills, WrapperSkillsH1, WrapperSkillsH2 } from '../styled';
-import { Tabs, TabList, Tab, TabPanel } from 'react-tabs';
+import {
+  WrapperSkills,
+  WrapperSkillsH1,
+  WrapperSkillsH2,
+  WrapperTabs,
+} from '../styled';
+import { TabList, Tab, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
 const ChampionSkills = ({
@@ -18,7 +23,7 @@ const ChampionSkills = ({
     <WrapperSkills>
       <WrapperSkillsH1>Skills</WrapperSkillsH1>
 
-      <Tabs>
+      <WrapperTabs>
         <TabList>
           <Tab>
             <Image src={passiveImg} alt={altPassive} title={titlePassive} />
@@ -64,7 +69,7 @@ const ChampionSkills = ({
             </TabPanel>
           );
         })}
-      </Tabs>
+      </WrapperTabs>
     </WrapperSkills>
   );
 };

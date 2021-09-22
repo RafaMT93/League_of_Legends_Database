@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Row, Col } from 'antd';
+import { Tabs } from 'react-tabs';
 
 export const WrapperChampionDiv = styled.div`
   color: ${({ theme }) => theme.colors.secondatyText};
@@ -114,3 +115,9 @@ export const WrapperSkillsH1 = styled.h1`
 export const WrapperSkillsH2 = styled.h2`
   color: ${({ theme }) => theme.colors.secondatyText};
 `;
+
+export const WrapperTabs = styled(Tabs)`
+  display: block;
+  text-align: center;
+`;
+WrapperTabs.tabsRole = 'Tabs';

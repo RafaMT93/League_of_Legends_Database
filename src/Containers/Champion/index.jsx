@@ -78,8 +78,7 @@ const Champion = ({ version }) => {
 
                   <WrapperSkillsH2>
                     <b>
-                      {data.data[params.name].partype.value === 'Mana' ||
-                      'Energia'
+                      {data.data[params.name].partype === 'Mana'
                         ? 'Custo de Mana: '
                         : 'Custo de Energia: '}
                     </b>

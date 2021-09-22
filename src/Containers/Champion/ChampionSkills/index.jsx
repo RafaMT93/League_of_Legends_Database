@@ -5,9 +5,11 @@ import {
   WrapperSkills,
   WrapperSkillsH1,
   WrapperSkillsH2,
+  WrapperSkillsDivision,
   WrapperTabs,
-} from '../styled';
-import { TabList, Tab, TabPanel } from 'react-tabs';
+  WrapperTabPanel,
+} from './styled';
+import { TabList, Tab } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
 const ChampionSkills = ({
@@ -41,32 +43,36 @@ const ChampionSkills = ({
           })}
         </TabList>
 
-        <TabPanel>
-          <WrapperSkillsH2>{passiveDescription}</WrapperSkillsH2>
-        </TabPanel>
+        <WrapperTabPanel>
+          <WrapperSkillsDivision>
+            <WrapperSkillsH2>{passiveDescription}</WrapperSkillsH2>
+          </WrapperSkillsDivision>
+        </WrapperTabPanel>
 
         {spells.map((x, index) => {
           return (
-            <TabPanel key={index}>
-              <WrapperSkillsH2>{x.description}</WrapperSkillsH2>
+            <WrapperTabPanel key={index}>
+              <WrapperSkillsDivision>
+                <WrapperSkillsH2>{x.description}</WrapperSkillsH2>
 
-              <WrapperSkillsH2>
-                <b>Cooldown:</b> {x.cooldown.join(' / ')}
-              </WrapperSkillsH2>
+                <WrapperSkillsH2>
+                  <b>Cooldown:</b> {x.cooldown.join(' / ')}
+                </WrapperSkillsH2>
 
-              <WrapperSkillsH2>
-                <b>
-                  {partype === 'Mana'
-                    ? 'Custo de Mana: '
-                    : 'Custo de Energia: '}
-                </b>
-                {x.cost.join(' / ')}
-              </WrapperSkillsH2>
+                <WrapperSkillsH2>
+                  <b>
+                    {partype === 'Mana'
+                      ? 'Custo de Mana: '
+                      : 'Custo de Energia: '}
+                  </b>
+                  {x.cost.join(' / ')}
+                </WrapperSkillsH2>
 
-              <WrapperSkillsH2>
-                <b>Range:</b> {x.range.join(' / ')}
-              </WrapperSkillsH2>
-            </TabPanel>
+                <WrapperSkillsH2>
+                  <b>Range:</b> {x.range.join(' / ')}
+                </WrapperSkillsH2>
+              </WrapperSkillsDivision>
+            </WrapperTabPanel>
           );
         })}
       </WrapperTabs>

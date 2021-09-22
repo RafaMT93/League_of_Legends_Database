@@ -7,7 +7,7 @@ import {
   WrapperLore,
   WrapperH1,
   WrapperTips,
-} from '../styled';
+} from './styled';
 
 const Lore = ({ name, title, lore, allytips, enemytips }) => {
   return (

@@ -4,7 +4,7 @@ import {
   WrapperInfo,
   WrapperInfoDetails,
   WrapperInfoDetailsInRight,
-} from '../styled';
+} from './styled';
 
 const ChampionInfo = ({
   attack,

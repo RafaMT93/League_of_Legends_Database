@@ -1,7 +1,15 @@
 import React from 'react';
 import Lore from './ChampionLore';
 import ChampionInfo from './ChampionInfo';
-import { WrapperChampionDiv } from './styled';
+import {
+  WrapperChampionDiv,
+  WrapperSkills,
+  WrapperSkillsH1,
+  WrapperSkillsH2,
+} from './styled';
+
+import { Tabs, TabList, Tab, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 import useFetch from '../../Hooks/useFetch';
 import { useParams } from 'react-router-dom';
@@ -42,7 +50,50 @@ const Champion = ({ version }) => {
           allytips={data.data[params.name].allytips}
           enemytips={data.data[params.name].enemytips}
         />
+        <WrapperSkills>
+          <WrapperSkillsH1>Skills</WrapperSkillsH1>
 
+          <Tabs>
+            <TabList>
+              <Tab>{data.data[params.name].passive.name}</Tab>
+              {data.data[params.name].spells.map((x, index) => {
+                return <Tab key={index}>{x.name}</Tab>;
+              })}
+            </TabList>
+
+            <TabPanel>
+              <WrapperSkillsH2>
+                {data.data[params.name].passive.description}
+              </WrapperSkillsH2>
+            </TabPanel>
+
+            {data.data[params.name].spells.map((x, index) => {
+              return (
+                <TabPanel key={index}>
+                  <WrapperSkillsH2>{x.description}</WrapperSkillsH2>
+
+                  <WrapperSkillsH2>
+                    <b>Cooldown:</b> {x.cooldown.join(' / ')}
+                  </WrapperSkillsH2>
+
+                  <WrapperSkillsH2>
+                    <b>
+                      {data.data[params.name].partype.value === 'Mana' ||
+                      'Energia'
+                        ? 'Custo de Mana: '
+                        : 'Custo de Energia: '}
+                    </b>
+                    {x.cost.join(' / ')}
+                  </WrapperSkillsH2>
+
+                  <WrapperSkillsH2>
+                    <b>Range:</b> {x.range.join(' / ')}
+                  </WrapperSkillsH2>
+                </TabPanel>
+              );
+            })}
+          </Tabs>
+        </WrapperSkills>
         <p>{console.log(data.data[params.name])}</p>
       </>
     );

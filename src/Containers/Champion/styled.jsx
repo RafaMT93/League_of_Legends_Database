@@ -97,3 +97,20 @@ export const WrapperH1 = styled.h1`
   font-size: calc(${({ theme }) => theme.fonts.fontSize} * 1.2);
   font-weight: bold;
 `;
+
+export const WrapperSkills = styled.div`
+  background-color: #000;
+  color: ${({ theme }) => theme.colors.secondatyText};
+`;
+
+export const WrapperSkillsH1 = styled.h1`
+  color: ${({ theme }) => theme.colors.secondatyText};
+  font-size: calc(${({ theme }) => theme.fonts.fontSize} * 1.5);
+  font-weight: bold;
+  text-align: center;
+  padding-top: 0.875rem;
+`;
+
+export const WrapperSkillsH2 = styled.h2`
+  color: ${({ theme }) => theme.colors.secondatyText};
+`;

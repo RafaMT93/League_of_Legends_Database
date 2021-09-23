@@ -5,6 +5,13 @@ export const WrapperSkills = styled.div`
   background-color: #000;
   color: ${({ theme }) => theme.colors.secondatyText};
   height: 400px;
+
+  @media (max-width: 768px) {
+    height: 600px;
+  }
+  @media (max-width: 325px) {
+    height: 700px;
+  }
 `;
 export const WrapperSkillsH1 = styled.h1`
   color: ${({ theme }) => theme.colors.secondatyText};

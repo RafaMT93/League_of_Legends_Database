@@ -28,6 +28,37 @@ export const WrapperContent = styled.div`
   padding: 0.313rem;
   margin: 2rem;
 `;
+export const WrapperRowStats = styled(Row)`
+  display: flex;
+  justify-content: center;
+`;
+export const WrapperH1Stats = styled.h1`
+  font-size: calc(${({ theme }) => theme.fonts.fontSize} * 1.5);
+  font-weight: bold;
+`;
+export const WrapperStats = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 1px 4px 13px 10px rgba(0, 0, 0, 0.59);
+  height: 300px;
+  width: 100%;
+  padding: 0.5rem;
+
+  @media (max-width: 1515px) {
+    height: 400px;
+  }
+  @media (max-width: 900px) {
+    height: 450px;
+  }
+  @media (max-width: 690px) {
+    height: 500px;
+  }
+  @media (max-width: 580px) {
+    height: 700px;
+  }
+`;
 export const WrapperLore = styled.section`
   margin-top: 2rem;
 `;

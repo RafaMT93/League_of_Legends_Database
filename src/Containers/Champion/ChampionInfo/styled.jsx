@@ -28,4 +28,8 @@ export const WrapperInfoDetailsInRight = styled(Col)`
   right: 10%;
   top: 50px;
   display: block;
+
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;

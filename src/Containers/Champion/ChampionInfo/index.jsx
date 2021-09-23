@@ -15,18 +15,19 @@ const ChampionInfo = ({
   partype,
 }) => {
   return (
-    <Row gutter={[16, 16]}>
-      <WrapperInfo span={24} md={8}>
-        <p>Informações Básicas</p>
-        <br />
+    <Row gutter={[8, 8]}>
+      <WrapperInfo span={8}>
+        <p>
+          <b>Base :</b>
+        </p>
         <p>Ataque: {attack}</p>
         <p>Defesa: {defense}</p>
         <p>Dificuldade: {difficulty}</p>
         <p>Magic: {magic}</p>
       </WrapperInfo>
-      <WrapperInfoDetails span={24} md={8}>
-        <Row gutter={[16, 16]}>
-          <Col span={14} md={7}>
+      <WrapperInfoDetails span={8}>
+        <Row gutter={[16, 24]}>
+          <Col span={12} xs={24}>
             <p>
               <b>Função Principal</b>
             </p>
@@ -34,7 +35,7 @@ const ChampionInfo = ({
               <i>{tags[0]}</i>
             </p>
           </Col>
-          <Col span={14} md={7}>
+          <Col span={12} xs={24}>
             {tags[1] && (
               <p>
                 <b>Função Secundária</b>
@@ -46,7 +47,7 @@ const ChampionInfo = ({
           </Col>
         </Row>
       </WrapperInfoDetails>
-      <WrapperInfoDetailsInRight span={24} md={8}>
+      <WrapperInfoDetailsInRight span={8}>
         <p>
           <b>Barra Secundária</b>
         </p>

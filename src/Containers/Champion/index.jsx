@@ -2,13 +2,13 @@ import React from 'react';
 import Lore from './ChampionLore';
 import ChampionInfo from './ChampionInfo';
 import ChampionSkills from './ChampionSkills';
-import { WrapperChampionDiv } from './styled';
 
 import 'react-tabs/style/react-tabs.css';
 
 import useFetch from '../../Hooks/useFetch';
 import { useParams } from 'react-router-dom';
 import { SEARCH_CHAMPION } from '../../API';
+import { WrapperChampionDiv } from './styled';
 
 const Champion = ({ version }) => {
   const params = useParams();
@@ -44,7 +44,30 @@ const Champion = ({ version }) => {
           lore={data.data[params.name].lore}
           allytips={data.data[params.name].allytips}
           enemytips={data.data[params.name].enemytips}
+          armor={data.data[params.name].stats.armor}
+          armorperlevel={data.data[params.name].stats.armorperlevel}
+          attackdamage={data.data[params.name].stats.attackdamage}
+          attackdamageperlevel={
+            data.data[params.name].stats.attackdamageperlevel
+          }
+          attackrange={data.data[params.name].stats.attackrange}
+          attackspeed={data.data[params.name].stats.attackspeed}
+          attackspeedperlevel={data.data[params.name].stats.attackspeedperlevel}
+          crit={data.data[params.name].stats.crit}
+          critperlevel={data.data[params.name].stats.critperlevel}
+          hp={data.data[params.name].stats.hp}
+          hpperlevel={data.data[params.name].stats.hpperlevel}
+          hpregen={data.data[params.name].stats.hpregen}
+          hpregenperlevel={data.data[params.name].stats.hpregenperlevel}
+          movespeed={data.data[params.name].stats.movespeed}
+          mp={data.data[params.name].stats.mp}
+          mpperlevel={data.data[params.name].stats.mpperlevel}
+          mpregen={data.data[params.name].stats.mpregen}
+          mpregenperlevel={data.data[params.name].stats.mpregenperlevel}
+          spellblock={data.data[params.name].stats.spellblock}
+          spellblockperlevel={data.data[params.name].stats.spellblockperlevel}
         />
+
         <ChampionSkills
           version={version}
           passiveImg={`http://ddragon.leagueoflegends.com/cdn/${version}/img/passive/${
@@ -56,7 +79,6 @@ const Champion = ({ version }) => {
           spells={data.data[params.name].spells}
           partype={data.data[params.name].partype}
         />
-
         <p>{console.log(data.data[params.name])}</p>
       </>
     );

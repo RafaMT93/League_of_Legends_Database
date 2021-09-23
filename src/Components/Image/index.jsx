@@ -12,13 +12,9 @@ const Image = ({ src, alt, title, height, width }) => {
   );
 };
 
-Image.defaultProps = {
-  width: 64,
-  height: 64,
-};
-
 Image.propTypes = {
   width: PropTypes.number,
+  height: PropTypes.number,
 };
 
 export default Image;

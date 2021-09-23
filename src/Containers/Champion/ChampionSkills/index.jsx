@@ -28,14 +28,18 @@ const ChampionSkills = ({
       <WrapperTabs>
         <TabList>
           <Tab>
-            <Image src={passiveImg} alt={altPassive} title={titlePassive} />
+            <Image
+              src={passiveImg}
+              alt={`Imagem da Passiva ${altPassive}`}
+              title={titlePassive}
+            />
           </Tab>
           {spells.map((x, index) => {
             return (
               <Tab key={index}>
                 <Image
                   src={`http://ddragon.leagueoflegends.com/cdn/${version}/img/spell/${x.image.full}`}
-                  alt={x.name}
+                  alt={`Imagem da skill ${x.name}`}
                   title={x.name}
                 />
               </Tab>
@@ -58,7 +62,7 @@ const ChampionSkills = ({
                 <WrapperSkillsH2
                   dangerouslySetInnerHTML={{ __html: x.description }}
                 />
-
+                <br />
                 <WrapperSkillsH2>
                   <b>Cooldown:</b> {x.cooldown.join(' / ')}
                 </WrapperSkillsH2>

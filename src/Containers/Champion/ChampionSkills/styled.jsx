@@ -13,6 +13,7 @@ export const WrapperSkills = styled.div`
     height: 700px;
   }
 `;
+
 export const WrapperSkillsH1 = styled.h1`
   color: ${({ theme }) => theme.colors.secondatyText};
   font-size: calc(${({ theme }) => theme.fonts.fontSize} * 1.5);

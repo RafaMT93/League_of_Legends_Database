@@ -20,11 +20,7 @@ const Champion = ({ version }) => {
     }
     fetchChampions();
   }, [params.name, request, version]);
-  var settings = {
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-  };
+
   if (loading) return <p>Loading...</p>;
   if (data)
     return (

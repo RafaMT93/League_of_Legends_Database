@@ -1,34 +1,91 @@
 import React from 'react';
 import Slider from 'react-slick';
-import { CarouselImage } from './styled';
+import Modal from '../../../Components/Modal';
+import {
+  CarouselImage,
+  ChampionSkinH2,
+  ChampionSkinParagraph,
+  ModalImage,
+} from './styled';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const ChampionSkins = ({ skins, name }) => {
+const ChampionSkins = ({ skins, name, id }) => {
+  const [modalOpened, setModalOpened] = React.useState(false);
+  const [clickImg, setClickImg] = React.useState(null);
+
   var settings = {
     infinite: true,
     slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToScroll: 3,
+    dots: true,
   };
 
-  return (
-    <div>
-      <h2>Skins</h2>
+  var settings2 = {
+    infinite: true,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    dots: true,
+  };
 
-      <Slider {...settings}>
-        {skins.map((x, index) => {
-          return (
-            <div key={index}>
-              <CarouselImage
-                src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${name}_${x.num}.jpg`}
-                alt={x.name}
-                title={x.name}
-              />
-            </div>
-          );
-        })}
-      </Slider>
-    </div>
+  function handleOpenModal(clickImg) {
+    setClickImg(clickImg);
+    setModalOpened(true);
+  }
+
+  return (
+    <>
+      <div>
+        <ChampionSkinH2>Skins</ChampionSkinH2>
+
+        <ChampionSkinParagraph>
+          Abaixo você pode conferir todas as skins do campeão {name}
+        </ChampionSkinParagraph>
+
+        {skins.length > 2 ? (
+          <Slider {...settings}>
+            {skins.map((x, index) => {
+              return (
+                <div key={index}>
+                  <CarouselImage
+                    src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_${x.num}.jpg`}
+                    alt={x.name}
+                    title={x.name}
+                    onClick={() =>
+                      handleOpenModal(
+                        `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_${x.num}.jpg`,
+                      )
+                    }
+                  />
+                </div>
+              );
+            })}
+          </Slider>
+        ) : (
+          <Slider {...settings2}>
+            {skins.map((x, index) => {
+              return (
+                <div key={index}>
+                  <CarouselImage
+                    src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_${x.num}.jpg`}
+                    alt={x.name}
+                    title={x.name}
+                    onClick={() =>
+                      handleOpenModal(
+                        `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_${x.num}.jpg`,
+                      )
+                    }
+                  />
+                </div>
+              );
+            })}
+          </Slider>
+        )}
+      </div>
+      <Modal open={modalOpened} onClose={() => setModalOpened(!modalOpened)}>
+        <ModalImage src={clickImg} />
+      </Modal>
+    </>
   );
 };
 

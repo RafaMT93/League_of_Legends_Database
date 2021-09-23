@@ -82,6 +82,7 @@ const Champion = ({ version }) => {
           <ChampionSkins
             skins={data.data[params.name].skins}
             name={data.data[params.name].name}
+            id={data.data[params.name].id}
           />
         ) : (
           <></>

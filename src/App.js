@@ -9,7 +9,7 @@ import theme from './theme';
 import './App.css';
 
 function App() {
-  const VERSION = '11.18.1';
+  const VERSION = '11.19.1';
 
   return (
     <ThemeProvider theme={theme}>

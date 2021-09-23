@@ -2,8 +2,7 @@ import React from 'react';
 import Lore from './ChampionLore';
 import ChampionInfo from './ChampionInfo';
 import ChampionSkills from './ChampionSkills';
-
-import 'react-tabs/style/react-tabs.css';
+import ChampionSkins from './ChampionSkins';
 
 import useFetch from '../../Hooks/useFetch';
 import { useParams } from 'react-router-dom';
@@ -21,7 +20,11 @@ const Champion = ({ version }) => {
     }
     fetchChampions();
   }, [params.name, request, version]);
-
+  var settings = {
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+  };
   if (loading) return <p>Loading...</p>;
   if (data)
     return (
@@ -79,6 +82,15 @@ const Champion = ({ version }) => {
           spells={data.data[params.name].spells}
           partype={data.data[params.name].partype}
         />
+        {data.data[params.name].skins.length > 0 ? (
+          <ChampionSkins
+            skins={data.data[params.name].skins}
+            name={data.data[params.name].name}
+          />
+        ) : (
+          <></>
+        )}
+
         <p>{console.log(data.data[params.name])}</p>
       </>
     );

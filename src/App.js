@@ -1,4 +1,4 @@
-import Home from './Containers/Home';
+import ChampionList from './Containers/ChampionList';
 import Header from './Components/Header';
 import Champion from './Containers/Champion';
 import Error404 from './Containers/Error404';
@@ -18,7 +18,7 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/">
-            <Home version={VERSION} />
+            <ChampionList version={VERSION} />
           </Route>
           <Route path="/Champion/:name">
             <Champion version={VERSION} />

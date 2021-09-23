@@ -1,15 +1,18 @@
 import React from 'react';
-import { WrapperHeader, WrapperHeaderLink } from './styled';
+import { Link } from 'react-router-dom';
+import { WrapperHeader, WrapperNav, WrapperHeaderLink } from './styled';
 
 const Header = () => {
   return (
     <WrapperHeader>
-      <WrapperHeaderLink>Logo</WrapperHeaderLink>
-      <WrapperHeaderLink>Champions</WrapperHeaderLink>
-      <WrapperHeaderLink>Itens</WrapperHeaderLink>
-      <WrapperHeaderLink>Spells</WrapperHeaderLink>
-      <WrapperHeaderLink>Jungle Time</WrapperHeaderLink>
-      <WrapperHeaderLink>Summoners</WrapperHeaderLink>
+      <WrapperNav className="container">
+        <Link to="/">Logo</Link>
+        <Link to="/">Champions</Link>
+        <Link>Itens</Link>
+        <Link>Spells</Link>
+        <Link>Jungle Time</Link>
+        <Link>Summoners</Link>
+      </WrapperNav>
     </WrapperHeader>
   );
 };

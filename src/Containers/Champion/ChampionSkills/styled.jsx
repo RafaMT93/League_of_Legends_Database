@@ -4,6 +4,7 @@ import { Tabs, TabPanel } from 'react-tabs';
 export const WrapperSkills = styled.div`
   background-color: #000;
   color: ${({ theme }) => theme.colors.secondatyText};
+  height: 400px;
 `;
 export const WrapperSkillsH1 = styled.h1`
   color: ${({ theme }) => theme.colors.secondatyText};

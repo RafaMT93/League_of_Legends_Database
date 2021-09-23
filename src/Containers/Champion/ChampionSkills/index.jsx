@@ -45,7 +45,9 @@ const ChampionSkills = ({
 
         <WrapperTabPanel>
           <WrapperSkillsDivision>
-            <WrapperSkillsH2>{passiveDescription}</WrapperSkillsH2>
+            <WrapperSkillsH2
+              dangerouslySetInnerHTML={{ __html: passiveDescription }}
+            />
           </WrapperSkillsDivision>
         </WrapperTabPanel>
 
@@ -53,7 +55,9 @@ const ChampionSkills = ({
           return (
             <WrapperTabPanel key={index}>
               <WrapperSkillsDivision>
-                <WrapperSkillsH2>{x.description}</WrapperSkillsH2>
+                <WrapperSkillsH2
+                  dangerouslySetInnerHTML={{ __html: x.description }}
+                />
 
                 <WrapperSkillsH2>
                   <b>Cooldown:</b> {x.cooldown.join(' / ')}

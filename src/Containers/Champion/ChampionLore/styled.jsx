@@ -15,6 +15,11 @@ export const WrapperChampionH1Name = styled.h1`
     display: block;
     margin: 2px auto;
   }
+  @media (max-width: 380px) {
+    &::after {
+      width: 100px;
+    }
+  }
 `;
 export const WrapperChampionTitle = styled.p`
   font-size: calc(${({ theme }) => theme.fonts.fontSize} * 1.5);
@@ -24,7 +29,6 @@ export const WrapperChampionTitle = styled.p`
 `;
 export const WrapperContent = styled.div`
   font-family: ${({ theme }) => theme.fonts.regular};
-
   padding: 0.313rem;
   margin: 2rem;
 `;
@@ -41,13 +45,13 @@ export const WrapperStats = styled.section`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  box-shadow: 1px 4px 13px 10px rgba(0, 0, 0, 0.59);
-  height: 300px;
+  box-shadow: 1px 4px 13px 10px rgba(0, 0, 0, 0.8);
+  height: 200px;
   width: 100%;
   padding: 0.5rem;
 
   @media (max-width: 1515px) {
-    height: 400px;
+    height: 300px;
   }
   @media (max-width: 900px) {
     height: 450px;

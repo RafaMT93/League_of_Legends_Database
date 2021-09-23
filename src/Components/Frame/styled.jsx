@@ -12,8 +12,15 @@ export const WrapperFrame = styled.div`
   background-image: url(${({ image }) => image});
   background-size: cover;
   cursor: pointer;
+  @media (max-width: 768px) {
+    height: 4rem;
+    width: 4rem;
+  }
 `;
 
 export const WrapperChampionName = styled.h3`
   font-weight: bold;
+  @media (max-width: 768px) {
+    font-size: calc(${({ theme }) => theme.fonts.fontSize} / 1.5);
+  }
 `;

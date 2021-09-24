@@ -1,6 +1,7 @@
 import ChampionList from './Containers/ChampionList';
 import Header from './Components/Header';
 import Champion from './Containers/Champion';
+import ItemList from './Containers/ItemList';
 import Error404 from './Containers/Error404';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ResetCss } from './Global/ResetCss';
@@ -22,6 +23,9 @@ function App() {
           </Route>
           <Route path="/Champion/:name">
             <Champion version={VERSION} />
+          </Route>
+          <Route path="/Item">
+            <ItemList version={VERSION} />
           </Route>
           <Route path="*">
             <Error404 />

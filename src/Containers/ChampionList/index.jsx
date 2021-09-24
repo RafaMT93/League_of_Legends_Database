@@ -27,6 +27,7 @@ const Home = ({ version }) => {
                 key={data.data[championName].id}
                 image={`http://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${data.data[championName].id}.png`}
                 id={data.data[championName].id}
+                tag={data.data[championName].tags}
               />
             );
           })}

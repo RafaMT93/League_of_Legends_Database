@@ -12,7 +12,3 @@ export const WrapperNav = styled.nav`
   justify-content: space-between;
   align-items: center;
 `;
-
-export const WrapperHeaderLink = styled.a`
-  cursor: pointer;
-`;

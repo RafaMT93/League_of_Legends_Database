@@ -30,7 +30,7 @@ html {
  */
 body {
   margin: 0;
-  font-family: Roboto, sans-serif;
+  font-family: Friz Quadrata, sans-serif;
   overflow-x: hidden;
 }
 /**

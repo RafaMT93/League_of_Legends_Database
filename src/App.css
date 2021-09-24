@@ -1,5 +1,16 @@
 @import 'antd/dist/antd.css';
-
+@font-face {
+  font-family: 'Friz Quadrata';
+  font-weight: normal;
+  font-style: normal;
+  src: url('./Assets/fonts/Friz Quadrata Std Medium.otf');
+}
+@font-face {
+  font-family: 'Friz Quadrata';
+  font-weight: bold;
+  font-style: bold;
+  src: url('./Assets/fonts/Friz Quadrata Bold.otf');
+}
 .container {
   max-width: 50rem;
   padding: 0 1rem;

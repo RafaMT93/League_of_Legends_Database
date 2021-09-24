@@ -13,8 +13,8 @@ export const WrapperFrame = styled.div`
   background-size: cover;
   cursor: pointer;
   @media (max-width: 768px) {
-    height: 4rem;
-    width: 4rem;
+    height: calc(${({ height }) => height} / 1.5);
+    width: calc(${({ width }) => width} / 1.5);
   }
 `;
 

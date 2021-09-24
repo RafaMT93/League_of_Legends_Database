@@ -34,6 +34,7 @@ const Champion = ({ version }) => {
             partype={data.data[params.name].partype}
           />
         </WrapperChampionDiv>
+
         <Lore
           name={data.data[params.name].name}
           title={data.data[params.name].title}
@@ -75,6 +76,7 @@ const Champion = ({ version }) => {
           spells={data.data[params.name].spells}
           partype={data.data[params.name].partype}
         />
+
         {data.data[params.name].skins.length > 0 ? (
           <ChampionSkins
             skins={data.data[params.name].skins}

@@ -14,11 +14,8 @@ const Champion = ({ version }) => {
   const { data, loading, request } = useFetch();
 
   React.useEffect(() => {
-    async function fetchChampions() {
-      const { url, options } = SEARCH_CHAMPION(version, params.name);
-      request(url, options);
-    }
-    fetchChampions();
+    const { url, options } = SEARCH_CHAMPION(version, params.name);
+    request(url, options);
   }, [params.name, request, version]);
 
   if (loading) return <p>Loading...</p>;
@@ -87,8 +84,6 @@ const Champion = ({ version }) => {
         ) : (
           <></>
         )}
-
-        <p>{console.log(data.data[params.name])}</p>
       </>
     );
   return null;

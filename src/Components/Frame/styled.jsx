@@ -6,8 +6,8 @@ export const WrapperSection = styled.section`
 `;
 
 export const WrapperFrame = styled.div`
-  height: 8rem;
-  width: 8rem;
+  height: ${({ height }) => height};
+  width: ${({ width }) => width};
   border: 1px solid #333;
   background-image: url(${({ image }) => image});
   background-size: cover;

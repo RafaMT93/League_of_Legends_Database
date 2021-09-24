@@ -1,17 +1,20 @@
 import React from 'react';
 import Frame from '../../Components/Frame';
+import Loading from '../../Components/Loading';
 
 import { Wrapper } from './styled';
 import { SEARCH_IN_VERSION } from '../../API';
 import useFetch from '../../Hooks/useFetch';
 
 const Home = ({ version }) => {
-  const { data, request } = useFetch();
+  const { data, loading, request } = useFetch();
 
   React.useEffect(() => {
     const { url, options } = SEARCH_IN_VERSION(version);
     request(url, options);
   }, [request, version]);
+
+  if (loading) return <Loading />;
 
   if (data)
     return (

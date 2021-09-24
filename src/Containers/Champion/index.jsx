@@ -3,6 +3,7 @@ import Lore from './ChampionLore';
 import ChampionInfo from './ChampionInfo';
 import ChampionSkills from './ChampionSkills';
 import ChampionSkins from './ChampionSkins';
+import Loading from '../../Components/Loading';
 
 import useFetch from '../../Hooks/useFetch';
 import { useParams } from 'react-router-dom';
@@ -18,7 +19,7 @@ const Champion = ({ version }) => {
     request(url, options);
   }, [params.name, request, version]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading />;
   if (data)
     return (
       <>

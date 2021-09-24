@@ -11,4 +11,5 @@ export const WrapperNav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-weight: bold;
 `;

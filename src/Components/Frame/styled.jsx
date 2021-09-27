@@ -12,6 +12,7 @@ export const WrapperFrame = styled.div`
   background-image: url(${({ image }) => image});
   background-size: cover;
   cursor: pointer;
+  opacity: ${({ opacity }) => opacity};
   @media (max-width: 768px) {
     height: calc(${({ height }) => height} / 1.5);
     width: calc(${({ width }) => width} / 1.5);

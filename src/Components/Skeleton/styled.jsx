@@ -8,13 +8,11 @@ export const LoadingSkeleton = styled.div`
   background-size: 200%;
   animation: skeleton 1.5s infinite alternate.
   @keyframes skeleton {  
-      from {
+    from {
       background-position: 0px;
-      opacity: 0;
     }
     to {
       background-position: -200%;
-      opacity: 1;
     }
   }
 `;

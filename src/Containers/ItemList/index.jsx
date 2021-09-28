@@ -11,7 +11,7 @@ import { Wrapper } from './styled';
 
 const ItemList = ({ version }) => {
   const { data, loading, request } = useFetch();
-  const [opacity, setOpacity] = React.useState(1);
+  const [opacity, setOpacity] = React.useState(0);
   const [modalOpened, setModalOpened] = React.useState(false);
   const [itemContent, setItemContent] = React.useState({});
 
@@ -22,6 +22,10 @@ const ItemList = ({ version }) => {
     }
     fetchItens();
   }, [version, request]);
+
+  React.useEffect(() => {
+    setOpacity(1);
+  }, []);
 
   function handleOpenModal(
     idItem,

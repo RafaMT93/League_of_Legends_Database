@@ -19,7 +19,7 @@ export const WrapperFrame = styled.div`
   }
 `;
 
-export const WrapperChampionName = styled.h3`
+export const WrapperName = styled.h3`
   font-weight: bold;
   @media (max-width: 768px) {
     font-size: calc(${({ theme }) => theme.fonts.fontSize} / 1.5);

@@ -31,21 +31,28 @@ function App() {
         <Router>
           <ResetCss />
           <Header />
-          <Select
-            name={'Versão'}
-            id={version}
-            value={version}
-            setValue={setVersion}
-            data={data}
-          />
           <Switch>
             <Route exact path="/">
+              <Select
+                name={'Versão'}
+                id={version}
+                value={version}
+                setValue={setVersion}
+                data={data}
+              />
               <ChampionList version={version} />
             </Route>
             <Route path="/Champion/:name">
               <Champion version={version} />
             </Route>
             <Route path="/Item">
+              <Select
+                name={'Versão'}
+                id={version}
+                value={version}
+                setValue={setVersion}
+                data={data}
+              />
               <ItemList version={version} />
             </Route>
             <Route path="*">

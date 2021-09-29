@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const Image = ({ src, alt, title, height, width, radius }) => {
   return (
@@ -7,17 +6,13 @@ const Image = ({ src, alt, title, height, width, radius }) => {
       src={src}
       style={{
         width: `${width}`,
-        height: `${height}px`,
+        height: `${height}`,
         borderRadius: `${radius}`,
       }}
       alt={alt}
       title={title}
     />
   );
-};
-
-Image.propTypes = {
-  height: PropTypes.number,
 };
 
 Image.defaultProps = {

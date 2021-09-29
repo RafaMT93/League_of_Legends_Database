@@ -7,7 +7,7 @@ import Image from '../../Components/Image';
 import useFetch from '../../Hooks/useFetch';
 import { Row, Col } from 'antd';
 import { SEARCH_ITENS } from '../../API';
-import { Wrapper } from './styled';
+import { Wrapper, WrapperFlexImg, WrapperModalParagraph } from './styled';
 
 const ItemList = ({ version }) => {
   const { data, loading, request } = useFetch();
@@ -53,6 +53,7 @@ const ItemList = ({ version }) => {
     return (
       <>
         <Wrapper>
+          {console.log(data.data)}
           {Object.keys(data.data).map((item) => {
             return (
               <Frame
@@ -85,16 +86,30 @@ const ItemList = ({ version }) => {
 
         <Modal open={modalOpened} onClose={() => setModalOpened(!modalOpened)}>
           <Row gutter={[8, 8]}>
-            <Col span={3}>
-              <Image src={itemContent.imgSrc} width={'100%'} radius={'30px'} />
-            </Col>
+            <WrapperFlexImg span={3}>
+              <Image
+                src={itemContent.imgSrc}
+                width={'100%'}
+                height={'8rem'}
+                radius={'30px'}
+              />
+            </WrapperFlexImg>
             <Col span={21}>
-              <p>{itemContent.idItem}</p>
-              <p>{itemContent.itemName}</p>
-              <p>{itemContent.itemTag}</p>
-              <p>{itemContent.itemGoldBase}</p>
-              <p>{itemContent.itemGoldSeller}</p>
-              <p>{itemContent.itemDesc}</p>
+              <WrapperModalParagraph>
+                {itemContent.itemName}
+              </WrapperModalParagraph>
+
+              <p>
+                <b>Preço de Compra:</b> {itemContent.itemGoldBase}
+              </p>
+              <p>
+                <b>Preço de Venda:</b> {itemContent.itemGoldSeller}
+              </p>
+              <p>
+                <b>Descrição:</b>{' '}
+              </p>
+
+              <p dangerouslySetInnerHTML={{ __html: itemContent.itemDesc }} />
             </Col>
           </Row>
         </Modal>

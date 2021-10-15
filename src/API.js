@@ -5,7 +5,7 @@ export function FILTER_VERSION() {
     url: CHAMPION_APP_URL + 'api/versions.json',
     options: {
       method: 'GET',
-      cacho: 'no-store',
+      cache: 'no-store',
     },
   };
 }

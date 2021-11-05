@@ -1,4 +1,4 @@
-const CHAMPION_APP_URL = 'http://ddragon.leagueoflegends.com/';
+const CHAMPION_APP_URL = 'https://ddragon.leagueoflegends.com/';
 
 export function FILTER_VERSION() {
   return {

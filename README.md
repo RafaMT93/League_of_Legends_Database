@@ -44,4 +44,4 @@
 <p>For view, clone this project, run <code><b>npm i</b></code> in the folder and execute with <code><b>npm start</b></code>.</p>
 
 <h2>Link</h2>
-<a href="https://modest-lamarr-fe8ec1.netlify.app" target="_blank">https://modest-lamarr-fe8ec1.netlify.app</a>
+<a href="https://modest-pare-1315b2.netlify.app" target="_blank">https://modest-pare-1315b2.netlify.app</a>
